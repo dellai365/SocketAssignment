@@ -17,10 +17,19 @@ public class Client {
         System.out.println("Connection established");
 
         // create in / out
-        BufferedReader inClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+        BufferedReaderinClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintWriteroutClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
-        // todo: implement the scenario
+        //implementing the scenario
+
+        Scanner obj = new Scanner(System.in);
+        String s = obj.nextLine();
+        outClient.println(s);
+
+        String ch = inClient.readLine();
+        System.out.println(ch);
+
+        obj.close();
 
         //close in / out
         inClient.close();
